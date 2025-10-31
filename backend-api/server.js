@@ -9,14 +9,11 @@ app.use(express.urlencoded({ extended: true }));
 app.use(express.json());
 app.use(express.static("public"));
 
+const jokeRoutes = require('./routes/jokeRoutes');
 
-const productRoutes = require('./routes/productRoutes');
-const userRoutes = require('./routes/userRoutes');
+app.use('/jokes', jokeRoutes);
 
-app.use('/products', productRoutes);
-app.use('/users', userRoutes);
-
-const PORT = process.env.PORT || 3000;
+const PORT = process.env.PORT;
 app.listen(PORT, function () {
     console.log("Server listening on port: " + PORT + "!");
 });

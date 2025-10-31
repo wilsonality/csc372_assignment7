@@ -1,0 +1,40 @@
+const pool = require('./db');
+async function checkTable(){
+    const queryText = "CREATE TABLE IF NOT EXISTS jokes ( id integer PRIMARY KEY, category VARCHAR(255) NOT NULL, setup text NOT NULL, delivery text NOT NULL);";
+    const result = await pool.query(queryText);
+    console.log("created tables");
+}
+
+async function getAllJokes() {
+    await checkTable();
+    const queryText = "SELECT * FROM jokes";
+    const result = await pool.query(queryText);
+    return result.rows;
+}
+
+async function getJokeById(id) {
+    const queryText = "SELECT * FROM jokes where id= $1";
+    const values = [id];
+    const result = await pool.query(queryText, values);
+    return result.rows[0];
+}
+
+async function deleteJoke(id) {
+    let queryText = "DELETE FROM jokes WHERE id =$1; ";
+    const values = [id];
+    const result = await pool.query(queryText, values);
+    return result.rowCount;
+}
+
+async function addJoke(category, setup, delivery) {
+    let queryText = "INSERT INTO jokes (category, setup, delivery) VALUES ($1, $2, $3) RETURNING *";
+    let values = [category, setup, delivery];
+    const result = await pool.query(queryText, values);
+    return result.rows[0];
+}
+module.exports = {
+    getAllJokes,
+    getJokeById,
+    deleteJoke,
+    addJoke
+};
