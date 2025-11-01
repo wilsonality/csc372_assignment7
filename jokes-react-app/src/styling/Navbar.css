@@ -1,0 +1,30 @@
+.navigation {
+  padding: 1em 3em;
+  flex-direction: row wrap;
+  background-color: #F2EDE3;
+  position: sticky;
+  top: 0;
+  text-align: right;
+  font-size: large;
+  font-size: larger;
+
+
+  li{
+    display: inline;
+    list-style-type: none;
+    margin-right: 0.25em;
+  }
+}
+
+a {
+  color: #F7D1CD;
+  text-decoration: none;
+}
+
+a:hover {
+  color: #87A1AB;
+}
+
+a:visited {
+  text-decoration: underline solid #87A1AB;
+}

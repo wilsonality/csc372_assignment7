@@ -1,0 +1,18 @@
+.joke{
+    background-color: #211C1E;
+    border-radius: 2em;
+    color: #F2EDE3;
+    max-width: 25%;
+    list-style-type: none;
+    padding: 2em;
+    text-align: left;
+
+    strong{
+        text-decoration: underline #87A1AB;
+    }
+
+    .joke:nth-child(odd) {
+        background-color: #F7D1CD;
+        color: #211C1E;
+    }
+}

@@ -1,0 +1,29 @@
+form{
+
+    input{
+        padding: 0.5em 0em;
+        width: 100%;
+    }
+
+    button{
+        color: #87A1AB;
+        margin: 5em;
+        font-size: larger;
+    }
+    p{
+        text-align: left;
+    }
+    
+}
+
+.page-box{
+    text-align: center;
+
+    padding: 0em 20em;
+
+    h1{
+        color: #7D5F4F;
+        font-size: 5em;
+    }
+
+}

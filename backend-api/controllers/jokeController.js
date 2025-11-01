@@ -45,10 +45,10 @@ async function removeJoke(req, res) {
 }
 
 async function createJoke(req, res) {
-    const { name, email, password } = req.body; 
-    if (name && email && password) {
+    const { setup, delivery, category } = req.body; 
+    if (setup && delivery && category) {
         try {
-            const newJoke = await model.addJoke(name, email, password);
+            const newJoke = await model.addJoke(setup, delivery, category);
             res.status(201).json(newJoke);
         } catch (err) {
             console.error(err);
