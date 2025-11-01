@@ -7,12 +7,21 @@
   text-align: right;
   font-size: large;
   font-size: larger;
+  letter-spacing: -1.5px;
 
 
   li{
     display: inline;
     list-style-type: none;
     margin-right: 0.25em;
+    transition: all 0.5s linear;
+  }
+  li:hover{
+      font-size: 120%;
+      text-decoration: underline wavy #87A1AB;
+      text-decoration-thickness: 3px;
+      text-decoration-skip: none;
+      letter-spacing: 0px;
   }
 }
 

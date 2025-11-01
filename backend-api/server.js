@@ -18,7 +18,7 @@ app.use(function(req, res, next) {
 
 const jokeRoutes = require('./routes/jokeRoutes');
 
-app.use('/jokes', jokeRoutes);
+app.use('/jokebook/jokes', jokeRoutes);
 
 const PORT = process.env.PORT;
 app.listen(PORT, function () {

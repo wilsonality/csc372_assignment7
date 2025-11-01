@@ -1,4 +1,7 @@
 import '../styling/Home.css'
+import Button from '../components/Button';
+import Random from './Random.jsx';
+import Categories from '../components/Categories.jsx';
 
 export default function Home(){
     return(
@@ -8,10 +11,10 @@ export default function Home(){
                 <p>
                     Welcome to the home page.
                 </p>
-                <p>
-                Knock knock?
-                </p>
             </div>
+            <Random/>
+            <Categories/>
         </div>
+
     );
 }

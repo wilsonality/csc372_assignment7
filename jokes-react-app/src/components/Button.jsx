@@ -1,7 +1,7 @@
 import "../styling/Button.css"
 
-export default function Button({ action, name }) {
+export default function Button({ action, name, onClick }) {
     return (
-            <button onClick={action}>{name}</button>
+            <button onClick={(e) => { onClick?.(e); action();}}>{name}</button>
     )
 }

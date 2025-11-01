@@ -1,11 +1,17 @@
 .joke{
-    background-color: #211C1E;
+    background-color: #483B32;
     border-radius: 2em;
     color: #F2EDE3;
-    max-width: 25%;
+    width: 200px;
     list-style-type: none;
     padding: 2em;
-    text-align: left;
+
+    /* animation */
+    opacity: 0;
+    animation: fadeIn 1s forwards;
+    p{
+        text-align: left;
+    }
 
     strong{
         text-decoration: underline #87A1AB;
@@ -14,5 +20,14 @@
     .joke:nth-child(odd) {
         background-color: #F7D1CD;
         color: #211C1E;
+    }
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0; /* Start at 0% opacity */
+    }
+    to {
+        opacity: 1; /* End at 100% opacity */
     }
 }

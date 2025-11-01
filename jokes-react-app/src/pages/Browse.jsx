@@ -1,5 +1,4 @@
 import { useEffect, useState } from "react";
-import Button from '../components/Button';
 import JokeCard from "../components/JokeCard";
 import '../styling/Browse.css'
 
@@ -9,7 +8,7 @@ export default function Browse(){
 
     // method to fetch the jokes
     async function getData() {
-        const url = "http://localhost:3000/jokes/";
+        const url = "http://localhost:3000/jokebook/jokes/";
         try {
             const response = await fetch(url);
             if (!response.ok) {
@@ -33,12 +32,13 @@ export default function Browse(){
         }
     }
 
-    window.addEventListener(onclick, getData);
+    useEffect(() => {
+        getData();
+    }, []);
 
     return(
         <>
-            <h1>View All Jokes</h1>
-            <Button action={getData} name={'show me the funny!'} id={'show-jokes-button'}/>
+            <h1>Look at all these jokes!</h1>
             <br></br>
             <h2>All Jokes</h2>
             <ul className="joke-card-box">

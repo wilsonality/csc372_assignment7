@@ -25,6 +25,21 @@ async function fetchJokeById(req, res) {
     }   
 }
 
+async function fetchJokeByCategory(req, res) {
+    const cat = req.params.category;
+    if (cat) {
+        try {
+            const joke = await model.getJokeByCategory(cat);
+            res.json(joke);
+        } catch (err) {
+            console.error(err);
+            res.status(500).send("Server error: failed to fetch joke by category.");
+        }
+    } else {
+        res.status(400).send("Missing required category param!");
+    }   
+}
+
 async function removeJoke(req, res) {
     const id = req.params.id;
     if (id) {
@@ -59,9 +74,21 @@ async function createJoke(req, res) {
     }
 }
 
+async function fetchCategories(req, res) {
+    try {
+        const categories = await model.getCategories();
+        res.json(categories);
+    } catch (err) {
+        console.error(err);
+        res.status(500).send("Server error: failed to fetch categories.");
+    }
+}
+
 module.exports = {
     fetchAllJokes,
     fetchJokeById,
     removeJoke,
-    createJoke
+    createJoke,
+    fetchJokeByCategory,
+    fetchCategories
 };

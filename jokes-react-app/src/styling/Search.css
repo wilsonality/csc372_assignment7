@@ -1,0 +1,21 @@
+input{
+    padding: 1em;
+    border-radius: 5%;
+    background-color: #F9F6F1;
+    color: #483B32;
+    font-size: larger;
+    text-align: center;
+    margin: 0 3em;
+    transition: 0.25s linear;
+    border: 0px;
+}
+
+Button{
+    margin: 1em 5em;
+}
+
+ul.joke-card-box{
+    display: flex;
+    flex: row wrap;
+    gap: 5em;
+}
